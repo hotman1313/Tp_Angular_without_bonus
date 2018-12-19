@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Message} from '../models/message';
 import {HttpClient} from '@angular/common/http';
-import Any = jasmine.Any;
 import {Observable, of} from 'rxjs';
 
 @Injectable({
@@ -15,7 +14,7 @@ export class ChatService {
     this.messages = new Array<Message>();
   }
 
-  public buildMessages(resutats: Array<Any>): Array<Message>{
+  public buildMessages(resutats: Array<any>): Array<Message>{
     if(resutats != null){
       for (const result of resutats){
         const message = new Message(result);

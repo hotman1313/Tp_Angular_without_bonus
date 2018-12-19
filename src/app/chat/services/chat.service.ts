@@ -26,7 +26,7 @@ export class ChatService {
 
   public getMessages(): Observable<Array<Message>> {
     return new Observable<Array<Message>>((observer) => {
-      this.http.get<Array<any>>('https://jsonplaceholder.typicode.com/posts').subscribe(
+      this.http.get<Array<any>>('http://localhost:3000/posts').subscribe(
         (messages) => {
           this.messages = this.buildMessages(messages);
           observer.next(this.messages);
